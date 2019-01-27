@@ -1,5 +1,6 @@
 # mydemoblog
 final demo blog for interview
+
 **ABOUT THE PROJECT**
 This was my first time using django, github, and my first large python project
 Objectives were to:
