@@ -1,0 +1,41 @@
+
+{% load static %}
+<head>
+<link  rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}" >
+    <title>Home Page</title>
+    <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<meta charset="utf-8">
+</head>
+<body>
+    <div id=banner>
+        <Header>Blog Demo Home Page</Header>
+        <h2>Newest Blogs!</h2>
+    </div>
+<div id="posts">    
+{% if latest_post_list %}
+    <ul>
+    {% for post in latest_post_list %}   
+            <li><a href="/blog/{{post.id}}/">
+            <div id=cols>
+            <ul>
+            <li>{{ post.post_title }}</li>
+            <li>{{ post.author }}</li>
+            <li>{{ post.pub_date }}</li>
+            </ul>    
+            </div>
+        </a></li>
+            
+    {% endfor %}
+</ul>
+
+    {% else %}
+    <p>No post are available.</p>
+{% endif %}
+</div> <!--end post div-->
+<a href="/blog/{{new_pk_id}}/new">new post</a>
+
+</body>
+
+   
