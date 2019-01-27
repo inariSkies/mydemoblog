@@ -1,0 +1,21 @@
+<!doctype html>
+{% load static %}
+<head>
+<link  rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}" >
+    <title>View Author</title>
+    <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<meta charset="utf-8">
+</head>
+<body>
+<div id= "banner">    
+<header>{{ post.post_title }}</header>
+</div>
+
+<p><b>Author:</b> &nbsp {{ post.author.author_name }}</p>
+    <br>
+    <p><b>Bio:</b> &nbsp{{ post.author.author_bio }}</p>
+    <br>
+    <button class="button"><a href="/blog/">Back</a></button>
+</body>

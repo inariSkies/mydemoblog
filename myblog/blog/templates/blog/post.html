@@ -1,18 +1,22 @@
 <!doctype html>
+{% load static %}
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<link  rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}" >
+    <title>View Post</title>
+    <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<meta charset="utf-8">
 </head>
-<h1>{{ post.post_title }}</h1>
-
-<ul>
-    <li>{{ post.author.author_name }}</li>
-    <li>{{ post.pub_date }}</li>
-    <li>{{ post.post_desc }}</li>
-    <li><a href="/blog/{{post.id}}/edit">Edit</a></li>
-</ul>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<body>
+<div id= "banner">    
+    <header>{{ post.post_title }}</header>
+</div>
+    <p><b>Written by:</b><a href="/blog/{{post.id}}/author"> &nbsp {{ post.author.author_name }}</a></p>
+    <br>
+    <p><b>Published:</b> &nbsp {{ post.pub_date }}</p>
+    <br>
+    <p>{{ post.post_desc }}</p>
+    <br>
+    <button class="button"><a href="/blog/{{post.id}}/edit">Edit</a></button>
+</body>

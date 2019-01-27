@@ -1,4 +1,4 @@
-
+<!doctype html>
 {% load static %}
 <head>
 <link  rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}" >
@@ -34,7 +34,7 @@
     <p>No post are available.</p>
 {% endif %}
 </div> <!--end post div-->
-<a href="/blog/{{new_pk_id}}/new">new post</a>
+<button class="button"><a href="/blog/{{new_pk_id}}/new">new post</a></button>
 
 </body>
 
